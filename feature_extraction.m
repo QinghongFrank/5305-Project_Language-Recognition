@@ -39,32 +39,26 @@ for i = 1:1:3200
     MFCC_feature = class_mfcc(:,3:14);
     %MFCC_feature = [class_mfcc(:,2:32);delta_mfcc(:,2:32)];
     MFCC = MFCC_feature(1:180,:);
-
-    SDC = mfcc2sdc(MFCC,11,1,3,180);
     
     % Combine to one dataset for each language
     if i >= 1 && i <= 800
         language = 'German';
         feature_german = horzcat(feature_german, MFCC);
-        SDC_german = horzcat(SDC_german, SDC);
     end
 
     if i >= 601 && i <= 1600
         language = 'English';
         feature_english = horzcat(feature_english, MFCC);
-        SDC_english = horzcat(SDC_english, SDC);
     end
 
     if i >= 1201 && i <= 2400
         language = 'Italian';
         feature_italian = horzcat(feature_italian, MFCC);
-        SDC_italian = horzcat(SDC_italian, SDC);
     end
 
     if i >= 1801 && i <= 3200
         language = 'Russian';
         feature_russian = horzcat(feature_russian, MFCC);
-        SDC_russian = horzcat(SDC_russian, SDC);
     end
 end
 

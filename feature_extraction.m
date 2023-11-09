@@ -46,17 +46,17 @@ for i = 1:1:3200
         feature_german = horzcat(feature_german, MFCC);
     end
 
-    if i >= 601 && i <= 1600
+    if i >= 801 && i <= 1600
         language = 'English';
         feature_english = horzcat(feature_english, MFCC);
     end
 
-    if i >= 1201 && i <= 2400
+    if i >= 1601 && i <= 2400
         language = 'Italian';
         feature_italian = horzcat(feature_italian, MFCC);
     end
 
-    if i >= 1801 && i <= 3200
+    if i >= 2401 && i <= 3200
         language = 'Russian';
         feature_russian = horzcat(feature_russian, MFCC);
     end
